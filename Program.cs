@@ -18,12 +18,38 @@ string[] CreateStringArray(int size)
 {
    string[] stringArray = new string[size];
    Console.WriteLine("Enter words through the input");
-   for (int i = 0; i < size - 1; i++)
+   for (int i = 0; i < size; i++)
    {
       stringArray[i] = Console.ReadLine()!;
    }
    return stringArray;
 }
-CreateStringArray(5);
-// Console.WriteLine("Enter the size of the array of strings");
-// int size = Console.ReadLine();
+
+string[] SortStringArray(string[] stringArray)
+{
+   for (int i = 0; i < stringArray.Length - 1; i++)
+   {
+      string stringArr = stringArray[i];
+      for (int j = 0; j < stringArr.Length - 1; j++)
+      {
+         if (j > 3)
+         {
+            continue;
+         }
+      }
+      stringArray[i] = stringArr[j];
+   }
+   return stringArray;
+}
+
+void PrintStringArray(string[] stringArray)
+{
+   Console.Write("[");
+   for (int i = 0; i < stringArray.Length - 1; i++)
+   {
+      Console.Write($"{stringArray[i]},\t");
+   }
+   Console.Write($"{stringArray[stringArray.Length - 1]}");
+   Console.WriteLine("]");
+}
+PrintStringArray(SortStringArray(CreateStringArray(5)));
