@@ -27,21 +27,24 @@ string[] CreateStringArray(int size)
 
 string[] SortStringArray(string[] stringArray)
 {
-   for (int i = 0; i < stringArray.Length - 1; i++)
+   int count = 0;
+   for (int i = 0; i < stringArray.Length; i++)
+      if (stringArray[i].Length < 4) count++;
+   if (count > 0)
    {
-      string stringArr = stringArray[i];
-      for (int j = 0; j < stringArr.Length - 1; j++)
+      string[] newArray = new string[count];
+      int j = 0;
+      for (int i = 0; i < stringArray.Length; i++)
       {
-         if (j > 3)
+         if (stringArray[i].Length < 4)
          {
-            continue;
+            newArray[j] = stringArray[i];
+            j++;
          }
       }
-      stringArray[i] = stringArr[j];
+      return newArray;
    }
-   return stringArray;
 }
-
 void PrintStringArray(string[] stringArray)
 {
    Console.Write("[");
