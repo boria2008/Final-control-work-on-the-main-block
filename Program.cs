@@ -44,6 +44,7 @@ string[] SortStringArray(string[] stringArray)
       }
       return newArray;
    }
+   else Console.WriteLine("В первоначальном массиве все элементы длиннее 3-х символов");
 }
 void PrintStringArray(string[] stringArray)
 {
@@ -55,4 +56,6 @@ void PrintStringArray(string[] stringArray)
    Console.Write($"{stringArray[stringArray.Length - 1]}");
    Console.WriteLine("]");
 }
-PrintStringArray(SortStringArray(CreateStringArray(5)));
+PrintStringArray(
+   SortStringArray(
+      CreateStringArray(5)));
