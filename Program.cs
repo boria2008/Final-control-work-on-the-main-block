@@ -25,7 +25,7 @@ string[] CreateStringArray(int size)
    return stringArray;
 }
 
-string[] SortStringArray(string[] stringArray)
+void SortStringArray(string[] stringArray)
 {
    int count = 0;
    for (int i = 0; i < stringArray.Length; i++)
@@ -42,20 +42,20 @@ string[] SortStringArray(string[] stringArray)
             j++;
          }
       }
-      return newArray;
+      Console.WriteLine($"Преобразованный массив: [{string.Join(" ", newArray)}]");
    }
    else Console.WriteLine("В первоначальном массиве все элементы длиннее 3-х символов");
 }
-void PrintStringArray(string[] stringArray)
-{
-   Console.Write("[");
-   for (int i = 0; i < stringArray.Length - 1; i++)
-   {
-      Console.Write($"{stringArray[i]},\t");
-   }
-   Console.Write($"{stringArray[stringArray.Length - 1]}");
-   Console.WriteLine("]");
-}
-PrintStringArray(
+// void PrintStringArray(string[] stringArray)
+// {
+//    Console.Write("[");
+//    for (int i = 0; i < stringArray.Length - 1; i++)
+//    {
+//       Console.Write($"{stringArray[i]},\t");
+//    }
+//    Console.Write($"{stringArray[stringArray.Length - 1]}");
+//    Console.WriteLine("]");
+// }
+// PrintStringArray(
    SortStringArray(
-      CreateStringArray(5)));
+      CreateStringArray(5));
